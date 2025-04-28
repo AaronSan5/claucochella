@@ -110,6 +110,29 @@
             box-shadow: 0 10px 20px rgba(98, 0, 234, 0.6);
         }
         
+        /* Estilo para el botón de música */
+        .music-button {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .music-button::before {
+            content: '🎵';
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .music-button.playing::before {
+            content: '🔊';
+        }
+        
+        /* Ocultar el reproductor de audio nativo */
+        #backgroundMusic {
+            display: none;
+        }
+        
         /* Secciones */
         .section {
             padding: 100px 0;
@@ -356,161 +379,156 @@
             100% { transform: translate(0, 0); }
         }
         
-        /* Las partes existentes del CSS permanecen igual */
-/* ... */
+        /* Media Queries mejoradas */
+        @media (max-width: 1024px) {
+            .main-title {
+                font-size: 6rem;
+            }
+            
+            .subtitle {
+                font-size: 1.8rem;
+            }
+        }
 
-/* Media Queries mejoradas */
-@media (max-width: 1024px) {
-    .main-title {
-        font-size: 6rem;
-    }
-    
-    .subtitle {
-        font-size: 1.8rem;
-    }
-}
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 4rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .artists-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .dj-image {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .guests-list {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
 
-@media (max-width: 768px) {
-    .main-title {
-        font-size: 4rem;
-    }
-    
-    .subtitle {
-        font-size: 1.5rem;
-    }
-    
-    .section-title {
-        font-size: 2.5rem;
-    }
-    
-    .artists-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-    
-    .dj-image {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .guests-list {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-    
-    .section {
-        padding: 70px 0;
-    }
-}
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+                letter-spacing: 3px;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 40px;
+            }
+            
+            .artists-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+            }
+            
+            .artist-card .artist-info {
+                padding: 15px 10px;
+            }
+            
+            .artist-name {
+                font-size: 1.2rem;
+            }
+            
+            .artist-genre {
+                font-size: 0.8rem;
+            }
+            
+            .dj-image {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .dj-name {
+                font-size: 2rem;
+            }
+            
+            .dj-description {
+                font-size: 1rem;
+            }
+            
+            .guests-list {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 10px;
+            }
+            
+            .guest-name {
+                font-size: 1rem;
+            }
+            
+            .guest-status {
+                font-size: 0.7rem;
+            }
+            
+            .social-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+        }
 
-@media (max-width: 480px) {
-    .main-title {
-        font-size: 3rem;
-        margin-bottom: 10px;
-    }
-    
-    .subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        letter-spacing: 3px;
-    }
-    
-    .cta-button {
-        padding: 12px 30px;
-        font-size: 1rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
-    
-    .artists-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 15px;
-    }
-    
-    .artist-card .artist-info {
-        padding: 15px 10px;
-    }
-    
-    .artist-name {
-        font-size: 1.2rem;
-    }
-    
-    .artist-genre {
-        font-size: 0.8rem;
-    }
-    
-    .dj-image {
-        width: 180px;
-        height: 180px;
-    }
-    
-    .dj-name {
-        font-size: 2rem;
-    }
-    
-    .dj-description {
-        font-size: 1rem;
-    }
-    
-    .guests-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 10px;
-    }
-    
-    .guest-name {
-        font-size: 1rem;
-    }
-    
-    .guest-status {
-        font-size: 0.7rem;
-    }
-    
-    .social-link {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    
-    .section {
-        padding: 50px 0;
-    }
-}
-
-/* Para teléfonos muy pequeños */
-@media (max-width: 320px) {
-    .main-title {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1rem;
-        letter-spacing: 2px;
-    }
-    
-    .artists-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .guests-list {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-}
-
-/* Mejora del menú para dispositivos móviles */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-}
-        
+        /* Para teléfonos muy pequeños */
+        @media (max-width: 320px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+            
+            .artists-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guests-list {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+        }
     </style>
 </head>
 <body>
-    <audio autoplay loop id="background-music">
-        <source src="https://www.youtube.com/watch?v=ejhJF__T9Bo" type="audio/mpeg">
+    <!-- Audio oculto -->
+    <audio id="backgroundMusic">
+        <source src="Las Avispas.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
+
     <!-- Efectos de luz -->
     <div class="light-effect light-1"></div>
     <div class="light-effect light-2"></div>
@@ -522,6 +540,7 @@
             <h1 class="main-title">CLAUCOCHELLA</h1>
             <h2 class="subtitle">Primera Edición</h2>
             <a href="https://wa.link/50nbqm" class="cta-button">Comprar Entradas</a>
+            <button id="musicToggleBtn" class="cta-button music-button">Reproducir Música</button>
         </div>
     </section>
     
@@ -579,7 +598,7 @@
             <a href="#" class="cta-button">Ver Más</a>
         </div>
     </section>
-    
+
     <!-- Lista de Invitados -->
     <section class="section guests" id="guests">
         <div class="container">
@@ -699,5 +718,25 @@
             <p class="copyright">© 2025 CLAUCOCHELLA - Todos los derechos reservados</p>
         </div>
     </footer>
+
+    <!-- JavaScript para el control de audio -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const music = document.getElementById('backgroundMusic');
+            const musicBtn = document.getElementById('musicToggleBtn');
+            
+            musicBtn.addEventListener('click', function() {
+                if (music.paused) {
+                    music.play();
+                    musicBtn.textContent = 'Pausar Música';
+                    musicBtn.classList.add('playing');
+                } else {
+                    music.pause();
+                    musicBtn.textContent = 'Reproducir Música';
+                    musicBtn.classList.remove('playing');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
